@@ -128,6 +128,7 @@ void tStartEnd (void *argument) {
 void tAudio (void *argument) {
 	for(; ;){
 			osEventFlagsWait(audioFlag, 0x0001, osFlagsWaitAny, osWaitForever);
+			osEventFlagsClear(audioFlag, 0x0001);
 			int thisNote = 0;
 			for(; ;) {
 			if(rxData == 79) {
